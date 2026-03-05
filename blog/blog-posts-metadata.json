@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": "generative-ai-guide",
+      "slug": "building-your-first-generative-ai-model",
+      "title": "Building Your First Generative AI Model: A Complete Beginner's Guide",
+      "category": "AI & ML",
+      "description": "A beginner's guide to creating conversational AI using Hugging Face transformers and modern NLP techniques.",
+      "author": "Ayan Aalam",
+      "publishDate": "2026-03-05",
+      "readTime": "8 min read",
+      "tags": ["Generative AI", "Hugging Face", "NLP", "Machine Learning", "Python", "Transformers"],
+      "coverImagePrompt": "Modern AI neural network visualization with glowing nodes and connections, lime green and dark background, futuristic tech aesthetic, 3D rendered",
+      "contentFile": "blog-post-1-generative-ai.md",
+      "featured": true,
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "id": "react-best-practices-2026",
+      "slug": "react-best-practices-in-2026",
+      "title": "React Best Practices in 2026: Building Modern, Scalable Applications",
+      "category": "Full-Stack Development",
+      "description": "Modern patterns, hooks, and performance optimization techniques for building scalable React applications in 2026.",
+      "author": "Ayan Aalam",
+      "publishDate": "2026-03-05",
+      "readTime": "9 min read",
+      "tags": ["React", "JavaScript", "Web Development", "Frontend", "Performance", "Best Practices"],
+      "coverImagePrompt": "Modern React component architecture diagram with flowing connections, lime green highlights, dark minimalist design, geometric shapes, tech illustration",
+      "contentFile": "blog-post-2-react-best-practices.md",
+      "featured": true,
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "id": "sql-vs-nosql-guide",
+      "slug": "sql-vs-nosql-choosing-the-right-database",
+      "title": "SQL vs NoSQL: Choosing the Right Database for Your Project",
+      "category": "Data Engineering",
+      "description": "Understanding when to use relational databases versus document stores for your next project.",
+      "author": "Ayan Aalam",
+      "publishDate": "2026-03-05",
+      "readTime": "10 min read",
+      "tags": ["SQL", "NoSQL", "Database", "MongoDB", "PostgreSQL", "Data Engineering", "Backend"],
+      "coverImagePrompt": "Split screen showing traditional SQL database schema on left and flexible NoSQL document structure on right, lime green accents, technical diagram style, dark background",
+      "contentFile": "blog-post-3-sql-vs-nosql.md",
+      "featured": true,
+      "views": 0,
+      "likes": 0
+    }
+  ],
+  "categories": [
+    {
+      "name": "AI & ML",
+      "slug": "ai-ml",
+      "color": "#C8FF00",
+      "description": "Artificial Intelligence and Machine Learning insights"
+    },
+    {
+      "name": "Full-Stack Development",
+      "slug": "full-stack",
+      "color": "#9ACC00",
+      "description": "Modern web development practices and frameworks"
+    },
+    {
+      "name": "Data Engineering",
+      "slug": "data-engineering",
+      "color": "#7FAA00",
+      "description": "Database design and data architecture"
+    }
+  ],
+  "tags": [
+    "Generative AI",
+    "Hugging Face",
+    "NLP",
+    "Machine Learning",
+    "Python",
+    "Transformers",
+    "React",
+    "JavaScript",
+    "Web Development",
+    "Frontend",
+    "Performance",
+    "Best Practices",
+    "SQL",
+    "NoSQL",
+    "Database",
+    "MongoDB",
+    "PostgreSQL",
+    "Data Engineering",
+    "Backend"
+  ]
+}

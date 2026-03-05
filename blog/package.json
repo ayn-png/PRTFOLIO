@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-blog",
+  "version": "1.0.0",
+  "description": "Blog posts for Ayan Aalam's portfolio",
+  "scripts": {
+    "convert": "node convert-to-html.js",
+    "dev": "npm run convert && echo 'Blog posts converted to HTML!'"
+  },
+  "keywords": ["blog", "portfolio", "markdown"],
+  "author": "Ayan Aalam",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^12.0.0",
+    "gray-matter": "^4.0.3"
+  }
+}

@@ -1,0 +1,161 @@
+<!--
+EmailJS Template for Portfolio Contact Form
+Template Name: template_portfolio
+Template ID: template_portfolio
+
+INSTRUCTIONS:
+1. Go to https://dashboard.emailjs.com/admin/templates
+2. Click "Create New Template"
+3. Copy and paste this entire template below
+4. Save with Template ID: template_portfolio
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .email-container {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .email-header {
+            background: linear-gradient(135deg, #C8FF00 0%, #9ACC00 100%);
+            color: #060606;
+            padding: 30px;
+            text-align: center;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .email-header p {
+            margin: 8px 0 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .email-body {
+            padding: 30px;
+        }
+        .info-row {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .info-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .info-value {
+            font-size: 16px;
+            color: #333;
+            word-wrap: break-word;
+        }
+        .message-box {
+            background: #f9f9f9;
+            border-left: 3px solid #C8FF00;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .email-footer {
+            background: #f5f5f5;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .email-footer a {
+            color: #9ACC00;
+            text-decoration: none;
+        }
+        .email-footer a:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-header,
+            .email-body,
+            .email-footer {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>💼 New Portfolio Contact</h1>
+            <p>Someone reached out through your portfolio website</p>
+        </div>
+
+        <!-- Body -->
+        <div class="email-body">
+            <!-- From -->
+            <div class="info-row">
+                <div class="info-label">👤 From</div>
+                <div class="info-value">{{from_name}}</div>
+            </div>
+
+            <!-- Email -->
+            <div class="info-row">
+                <div class="info-label">📧 Email Address</div>
+                <div class="info-value">
+                    <a href="mailto:{{from_email}}" style="color: #9ACC00; text-decoration: none;">{{from_email}}</a>
+                </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="info-row">
+                <div class="info-label">📌 Subject</div>
+                <div class="info-value">{{subject}}</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Message -->
+            <div class="info-row">
+                <div class="info-label">💬 Message</div>
+                <div class="message-box">
+                    {{message}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+            <p>This message was sent from your portfolio contact form</p>
+            <p style="margin-top: 10px;">
+                <a href="mailto:{{from_email}}?subject=Re: {{subject}}">Reply to {{from_name}}</a>
+            </p>
+            <p style="margin-top: 15px; color: #aaa; font-size: 11px;">
+                Powered by <a href="https://emailjs.com" style="color: #9ACC00;">EmailJS</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
