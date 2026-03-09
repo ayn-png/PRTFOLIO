@@ -30,6 +30,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 
+<!-- Spline 3D Viewer -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+
 <!-- Google Analytics 4 -->
 <!-- IMPORTANT: Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID -->
 <!-- Get it from: https://analytics.google.com/analytics/web/ -->
@@ -166,10 +169,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 /* ============================================================
    HERO ROBOT
 ============================================================ */
-.hero-robot { position: absolute; right: 7%; top: 50%; transform: translateY(-50%); width: 260px; pointer-events: none; opacity: 0; animation: robotAppear 1s 1.2s forwards; filter: drop-shadow(0 0 40px rgba(200,255,0,.08)); }
-.hero-robot svg { animation: robotFloat 5s ease-in-out 2.2s infinite; display: block; }
+.hero-robot { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 460px; height: 560px; pointer-events: all; opacity: 0; animation: robotAppear 1s 1.2s forwards; }
+.hero-robot spline-viewer { width: 100%; height: 100%; }
 @keyframes robotAppear { to { opacity: 1; } }
-@keyframes robotFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
 
 /* ============================================================
    MARQUEE
@@ -342,7 +344,7 @@ footer { display: flex; justify-content: space-between; align-items: center; pad
 @media (max-width: 1200px) {
   nav { padding: 1.8rem 3rem; }
   #hero { padding: 0 3rem 5rem; }
-  .hero-robot { width: 220px; right: 3%; }
+  .hero-robot { width: 360px; height: 440px; right: 2%; }
   .about-left, .about-right { padding: 6rem 3rem; }
   #skills, #work, #certs, #contact { padding: 6rem 3rem; }
   footer { padding: 2rem 3rem; }
@@ -557,124 +559,9 @@ footer { display: flex; justify-content: space-between; align-items: center; pad
 <section id="hero">
   <div class="hero-number">AI</div>
 
-  <!-- ROBOT -->
+  <!-- SPLINE 3D ROBOT -->
   <div class="hero-robot">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 415" width="280" height="415">
-      <defs>
-        <filter id="rg" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="3" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="rg2" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur stdDeviation="7" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <linearGradient id="rbg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1c1c1c"/>
-          <stop offset="100%" stop-color="#080808"/>
-        </linearGradient>
-      </defs>
-      <!-- Shadow glow -->
-      <ellipse cx="140" cy="412" rx="74" ry="5" fill="#C8FF00" opacity="0.07"/>
-      <!-- Antenna wire -->
-      <line x1="140" y1="40" x2="140" y2="74" stroke="#2a2a2a" stroke-width="3" stroke-linecap="round"/>
-      <!-- Antenna pulse -->
-      <circle cx="140" cy="22" r="6" fill="#C8FF00" opacity="0">
-        <animate attributeName="r" values="6;22;6" dur="2.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.22;0;0.22" dur="2.6s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Antenna glow bg -->
-      <circle cx="140" cy="22" r="11" fill="#C8FF00" opacity="0.1" filter="url(#rg2)"/>
-      <!-- Antenna bulb -->
-      <circle cx="140" cy="22" r="5.5" fill="#0d0d0d" stroke="#C8FF00" stroke-width="1.5"/>
-      <circle cx="140" cy="22" r="2.5" fill="#C8FF00" filter="url(#rg)"/>
-      <!-- HEAD -->
-      <rect x="50" y="74" width="180" height="140" rx="10" fill="url(#rbg)" stroke="#252525" stroke-width="1.5"/>
-      <!-- Head top accent -->
-      <rect x="55" y="74" width="170" height="3" rx="1.5" fill="#C8FF00" opacity="0.14"/>
-      <!-- Corner bolts -->
-      <circle cx="64" cy="87" r="3" fill="#111" stroke="#2e2e2e"/><circle cx="216" cy="87" r="3" fill="#111" stroke="#2e2e2e"/>
-      <circle cx="64" cy="204" r="3" fill="#111" stroke="#2e2e2e"/><circle cx="216" cy="204" r="3" fill="#111" stroke="#2e2e2e"/>
-      <!-- EYE SOCKETS -->
-      <rect x="66" y="104" width="64" height="44" rx="6" fill="#040404" stroke="#181818"/>
-      <rect x="150" y="104" width="64" height="44" rx="6" fill="#040404" stroke="#181818"/>
-      <!-- EYES GLOWING -->
-      <rect x="70" y="108" width="56" height="36" rx="4" fill="#C8FF00" filter="url(#rg2)">
-        <animate attributeName="opacity" values="0.92;0.52;0.92" dur="3s" repeatCount="indefinite"/>
-      </rect>
-      <rect x="154" y="108" width="56" height="36" rx="4" fill="#C8FF00" filter="url(#rg2)">
-        <animate attributeName="opacity" values="0.92;0.52;0.92" dur="3s" begin="0.35s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Pupils -->
-      <rect x="88" y="117" width="20" height="18" rx="3" fill="#060606"/>
-      <rect x="172" y="117" width="20" height="18" rx="3" fill="#060606"/>
-      <!-- Pupil glints -->
-      <circle cx="92" cy="121" r="2.5" fill="#C8FF00" opacity="0.3"/>
-      <circle cx="176" cy="121" r="2.5" fill="#C8FF00" opacity="0.3"/>
-      <!-- SPEAKER / MOUTH -->
-      <rect x="66" y="162" width="148" height="40" rx="5" fill="#080808" stroke="#1d1d1d"/>
-      <line x1="72" y1="172" x2="208" y2="172" stroke="#222" stroke-width="1.5"/>
-      <line x1="72" y1="180" x2="208" y2="180" stroke="#222" stroke-width="1.5"/>
-      <line x1="72" y1="188" x2="208" y2="188" stroke="#222" stroke-width="1.5"/>
-      <line x1="72" y1="196" x2="208" y2="196" stroke="#222" stroke-width="1.5"/>
-      <!-- Mouth dots -->
-      <circle cx="108" cy="182" r="3.5" fill="#C8FF00" filter="url(#rg)" opacity="0.92"/>
-      <circle cx="122" cy="182" r="3.5" fill="#C8FF00" opacity="0.4"/>
-      <circle cx="136" cy="182" r="3.5" fill="#C8FF00" opacity="0.15"/>
-      <!-- Mic -->
-      <circle cx="188" cy="182" r="7.5" fill="#0d0d0d" stroke="#C8FF00" stroke-width="0.6" opacity="0.5"/>
-      <circle cx="188" cy="182" r="3" fill="#C8FF00" opacity="0.38"/>
-      <!-- NECK -->
-      <rect x="106" y="214" width="68" height="28" rx="3" fill="#0f0f0f" stroke="#232323"/>
-      <rect x="114" y="218" width="52" height="2.5" fill="#C8FF00" opacity="0.17" rx="1"/>
-      <rect x="114" y="224" width="52" height="2.5" fill="#C8FF00" opacity="0.17" rx="1"/>
-      <rect x="114" y="230" width="52" height="2.5" fill="#C8FF00" opacity="0.17" rx="1"/>
-      <!-- TORSO -->
-      <rect x="26" y="242" width="228" height="158" rx="8" fill="url(#rbg)" stroke="#252525" stroke-width="1.5"/>
-      <rect x="31" y="242" width="218" height="3" rx="1.5" fill="#C8FF00" opacity="0.09"/>
-      <!-- Shoulder pads -->
-      <rect x="14" y="242" width="18" height="54" rx="4" fill="#0e0e0e" stroke="#222"/>
-      <rect x="248" y="242" width="18" height="54" rx="4" fill="#0e0e0e" stroke="#222"/>
-      <!-- LEFT ARM -->
-      <rect x="2" y="290" width="20" height="80" rx="6" fill="#0b0b0b" stroke="#1e1e1e"/>
-      <rect x="2" y="290" width="20" height="4" rx="2" fill="#1a1a1a"/>
-      <rect x="2" y="354" width="20" height="19" rx="4" fill="#0e0e0e" stroke="#C8FF00" stroke-width="0.5" opacity="0.4"/>
-      <!-- RIGHT ARM -->
-      <rect x="258" y="290" width="20" height="80" rx="6" fill="#0b0b0b" stroke="#1e1e1e"/>
-      <rect x="258" y="290" width="20" height="4" rx="2" fill="#1a1a1a"/>
-      <rect x="258" y="354" width="20" height="19" rx="4" fill="#0e0e0e" stroke="#C8FF00" stroke-width="0.5" opacity="0.4"/>
-      <!-- CHEST PANEL -->
-      <rect x="66" y="262" width="148" height="112" rx="5" fill="#040404" stroke="#191919"/>
-      <!-- Circuit lines -->
-      <polyline points="76,296 106,296 106,278 140,278" fill="none" stroke="#C8FF00" stroke-width="0.8" opacity="0.27"/>
-      <polyline points="204,296 174,296 174,278 140,278" fill="none" stroke="#C8FF00" stroke-width="0.8" opacity="0.27"/>
-      <circle cx="140" cy="278" r="2.5" fill="#C8FF00" opacity="0.4" filter="url(#rg)"/>
-      <polyline points="76,328 106,328 106,350 140,350" fill="none" stroke="#C8FF00" stroke-width="0.8" opacity="0.2"/>
-      <polyline points="204,328 174,328 174,350 140,350" fill="none" stroke="#C8FF00" stroke-width="0.8" opacity="0.2"/>
-      <!-- POWER CORE -->
-      <circle cx="140" cy="312" r="23" fill="#050505" stroke="#C8FF00" stroke-width="1" opacity="0.65"/>
-      <circle cx="140" cy="312" r="15" fill="#080808" stroke="#C8FF00" stroke-width="0.5" opacity="0.4"/>
-      <circle cx="140" cy="312" r="7" fill="#C8FF00" filter="url(#rg2)">
-        <animate attributeName="opacity" values="0.88;0.42;0.88" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Energy bars -->
-      <rect x="76" y="352" width="52" height="6" rx="1" fill="#090909" stroke="#1e1e1e"/>
-      <rect x="77" y="353" width="38" height="4" rx="0.5" fill="#C8FF00" opacity="0.65"/>
-      <rect x="152" y="352" width="52" height="6" rx="1" fill="#090909" stroke="#1e1e1e"/>
-      <rect x="153" y="353" width="22" height="4" rx="0.5" fill="#C8FF00" opacity="0.35"/>
-      <!-- Side vents -->
-      <rect x="31" y="258" width="28" height="7" rx="1" fill="#0b0b0b" stroke="#1e1e1e"/>
-      <line x1="34" y1="261.5" x2="56" y2="261.5" stroke="#272727" stroke-width="1.2"/>
-      <line x1="34" y1="264" x2="56" y2="264" stroke="#272727" stroke-width="1.2"/>
-      <rect x="221" y="258" width="28" height="7" rx="1" fill="#0b0b0b" stroke="#1e1e1e"/>
-      <line x1="224" y1="261.5" x2="246" y2="261.5" stroke="#272727" stroke-width="1.2"/>
-      <line x1="224" y1="264" x2="246" y2="264" stroke="#272727" stroke-width="1.2"/>
-      <!-- Bottom panel -->
-      <rect x="66" y="378" width="148" height="20" rx="3" fill="#070707" stroke="#191919"/>
-      <rect x="76" y="383" width="28" height="8" rx="1" fill="#0c0c0c" stroke="#222"/>
-      <rect x="112" y="383" width="56" height="8" rx="1" fill="#0c0c0c" stroke="#C8FF00" stroke-width="0.5" opacity="0.32"/>
-      <rect x="176" y="383" width="28" height="8" rx="1" fill="#0c0c0c" stroke="#222"/>
-    </svg>
+    <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" loading-anim-type="spinner-small-dark"></spline-viewer>
   </div>
 
   <div class="hero-tag">CS Student · AI Enthusiast · Full-Stack Developer</div>
@@ -1312,6 +1199,13 @@ function closeCertLightbox() {
 /* ---- DYNAMIC COPYRIGHT YEAR ---- */
 document.getElementById('footer-year').textContent =
   '© ' + new Date().getFullYear() + ' Ayan Aalam';
+
+/* ---- HIDE SPLINE LOGO ---- */
+const _splineLogoTimer = setInterval(() => {
+  const logo = document.querySelector('spline-viewer')?.shadowRoot?.querySelector('#logo');
+  if (logo) { logo.style.display = 'none'; clearInterval(_splineLogoTimer); }
+}, 100);
+
 </script>
 </body>
 </html>
